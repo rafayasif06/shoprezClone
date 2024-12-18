@@ -98,11 +98,9 @@ const Sidebar = ({ toggleSidebar, isOpen }) => {
                   <button>
                     <input className="text-green-300" type="checkbox" />
                   </button>
-                  <button className="text-[#586A84]">
-                    {item.shownBrandName}
-                  </button>
+                  <button className="text-[#586A84]">{item.brandName}</button>
                   <button className="text-gray-400">
-                    {item.shownBrandQuantity}
+                    {item.brandQuantity}
                   </button>
                 </div>
               </div>
@@ -117,9 +115,9 @@ const Sidebar = ({ toggleSidebar, isOpen }) => {
               <div key={index}>
                 <div className="flex text-sm gap-3">
                   <input type="checkbox" />
-                  <span className="text-[#586A84]">{item.hiddenBrandName}</span>
+                  <span className="text-[#586A84]">{item.brandName}</span>
                   <span className="text-gray-400">
-                    {item.hiddenBrandQuantity}
+                    {item.brandQuantity}
                   </span>
                 </div>
               </div>
@@ -160,11 +158,9 @@ const Sidebar = ({ toggleSidebar, isOpen }) => {
                   <button>
                     <input className="text-green-300" type="checkbox" />
                   </button>
-                  <button className="text-[#586A84]">
-                    {item.shownPriceOption}
-                  </button>
+                  <button className="text-[#586A84]">{item.priceOption}</button>
                   <button className="text-gray-400">
-                    {item.shownQuantityByPrice}
+                    {item.quantityByPrice}
                   </button>
                 </div>
               </div>
@@ -180,10 +176,10 @@ const Sidebar = ({ toggleSidebar, isOpen }) => {
                 <div className="flex text-sm gap-3">
                   <input type="checkbox" />
                   <span className="text-[#586A84]">
-                    {item.HiddenPriceOption}
+                    {item.priceOption}
                   </span>
                   <span className="text-gray-400">
-                    {item.hiddenQuantityByPrice}
+                    {item.quantityByPrice}
                   </span>
                 </div>
               </div>

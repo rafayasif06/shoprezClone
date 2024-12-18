@@ -33,6 +33,10 @@ const FeaturedProductsSection = () => {
     sliderRef.current.slickNext();
   };
 
+  const savingItem = (key, item) => {
+    localStorage.setItem(key, JSON.stringify(item));
+};
+
   var settings = {
     dots: false,
     arrows: true,
@@ -64,6 +68,7 @@ const FeaturedProductsSection = () => {
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
   };
+
   return (
     <section className="w-full hidden md:block">
       <div className=" p-8 flex flex-col gap-12 relative mx-auto max-w-[1440px] ">
@@ -97,7 +102,7 @@ const FeaturedProductsSection = () => {
                   <div className="text-lg font-semibold">
                     <span>{item.productPrice}</span>
                   </div>
-                  <div className="flex rounded-full justify-center items-center h-8 w-8 bg-gray-300 hover:bg-gray-400 text-white">
+                  <div onClick={()=>savingItem(index,item)} className="flex rounded-full justify-center items-center h-8 w-8 bg-gray-300 hover:bg-gray-400 text-white">
                     <button>
                       <HiShoppingBag />
                     </button>

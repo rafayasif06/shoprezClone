@@ -1,14 +1,26 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const Ignore = () => {
+const First = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggelToTrue = () => setIsOpen((prev) => !prev);
   return (
-<div class="flex flex-col md:flex-row">
-  <div class="md:order-2">abc</div>
-  <div class="md:order-3">def</div>
-  <div class="md:order-1">ghi</div>
-</div>
+    <>
+      <div
+        class={`grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out ${
+          isOpen ? "grid-rows-[1fr]" : ""
+        }`}
+      >
+        <div class="overflow-hidden">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
+          nesciunt. Accusantium natus aliquid nulla incidunt! Id, temporibus ea
+          asperiores recusandae veniam optio error accusantium vitae sint porro
+          voluptatibus non alias!
+        </div>
+      </div>
 
-  )
-}
+      <button onClick={toggelToTrue}>Toggle Content</button>
+    </>
+  );
+};
 
-export default Ignore
+export default First;

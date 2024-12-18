@@ -21,54 +21,54 @@ export const CategoryItems = [
 
 export const ShownBrandsOptions = [
   {
-    shownBrandName: "Apple",
-    shownBrandQuantity: "(42)",
+    brandName: "Apple",
+    brandQuantity: "(42)",
   },
   {
-    shownBrandName: "HP",
-    shownBrandQuantity: "(24)",
+    brandName: "HP",
+    brandQuantity: "(24)",
   },
   {
-    shownBrandName: "Dell",
-    shownBrandQuantity: "(14)",
+    brandName: "Dell",
+    brandQuantity: "(14)",
   },
 ];
 export const HiddenBrandsOptions = [
   {
-    hiddenBrandName: "Lenovo",
-    hiddenBrandQuantity: "(41)",
+    brandName: "Lenovo",
+    brandQuantity: "(41)",
   },
   {
-    hiddenBrandName: "Sony",
-    hiddenBrandQuantity: "(89)",
+    brandName: "Sony",
+    brandQuantity: "(89)",
   },
   {
-    hiddenBrandName: "Toshiba",
-    hiddenBrandQuantity: "(11)",
+    brandName: "Toshiba",
+    brandQuantity: "(11)",
   },
 ];
 export const ShownPriceOPtions = [
   {
-    shownPriceOption: "<50",
-    shownQuantityByPrice: "(31)",
+    priceOption: "<50",
+    quantityByPrice: "(31)",
   },
   {
-    shownPriceOption: "100-200",
-    shownQuantityByPrice: "(53)",
+    priceOption: "100-200",
+    quantityByPrice: "(53)",
   },
   {
-    shownPriceOption: "200-300",
-    shownQuantityByPrice: "(85)",
+    priceOption: "200-300",
+    quantityByPrice: "(85)",
   },
 ];
 export const HiddenPriceOptions =[
   {
-    HiddenPriceOption:"300-400",
-    hiddenQuantityByPrice:"(42)"
+    priceOption:"300-400",
+    quantityByPrice:"(42)"
   },
   {
-    HiddenPriceOption:">500",
-    hiddenQuantityByPrice:"(45)"
+    priceOption:">500",
+    quantityByPrice:"(45)"
   },
 ]
 
