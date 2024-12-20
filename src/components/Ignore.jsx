@@ -1,26 +1,34 @@
-import React, { useState } from "react";
-
-const First = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggelToTrue = () => setIsOpen((prev) => !prev);
-  return (
-    <>
-      <div
-        class={`grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out ${
-          isOpen ? "grid-rows-[1fr]" : ""
-        }`}
-      >
-        <div class="overflow-hidden">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
-          nesciunt. Accusantium natus aliquid nulla incidunt! Id, temporibus ea
-          asperiores recusandae veniam optio error accusantium vitae sint porro
-          voluptatibus non alias!
+<h2 className="text-4xl font-bold mb-4">Your Cart</h2>
+      {cartItems.length > 0 ? (
+        <div className="grid grid-cols-1 gap-4">
+          {cartItems.map((item, index) => (
+            <div
+            key={index}
+            className="flex justify-between items-center border rounded-md p-4"
+            >
+              <div>
+                <p className="text-lg font-medium">{item.product}</p>
+                <p className="text-gray-500 text-sm">
+                  {item.productManufacturer}
+                </p>
+                <p className="text-lg font-semibold">{item.productPrice}</p>
+              </div>
+              <div>
+                <img
+                  src={item.prductImg}
+                  alt={item.product}
+                  className="h-16 w-40 object-cover"
+                  />
+              </div>
+            </div>
+          ))}
+          <button
+            className="mt-4 p-2 bg-red-500 text-white rounded"
+            onClick={clearCart}
+            >
+            Clear Cart
+          </button>
         </div>
-      </div>
-
-      <button onClick={toggelToTrue}>Toggle Content</button>
-    </>
-  );
-};
-
-export default First;
+      ) : (
+        <p className="text-gray-500">Your cart is empty.</p>
+      )}

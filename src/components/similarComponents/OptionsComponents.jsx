@@ -10,7 +10,7 @@ import {
   ShownPriceOPtions,
 } from "./SidebarItems";
 
-const Sidebar = ({ toggleSidebar, isOpen }) => {
+const OptionsComponents = ({ toggleSidebar, isOpen }) => {
   const [isCategoryTrue, setIsCategoryTrue] = useState(true);
   const toggleCategoryToTrue = () => setIsCategoryTrue((prev) => !prev);
 
@@ -214,4 +214,6 @@ const Sidebar = ({ toggleSidebar, isOpen }) => {
   );
 };
 
-export default Sidebar;
+
+
+export default OptionsComponents

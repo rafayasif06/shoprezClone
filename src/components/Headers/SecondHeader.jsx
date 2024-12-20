@@ -6,6 +6,7 @@ import { FaChevronDown } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 import Sidebar from "../sidebar/Sidebar";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SecondHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,7 +71,9 @@ const SecondHeader = () => {
 
         <div className="min-w-32 flex overflow-hidden items-center">
           <button className="relative text-white rounded-l-lg text-xl  p-3 bg-[#319DFF]">
+            <Link to={"/cart"}>
             <HiShoppingBag />
+            </Link>
             <div className="w-3.5 h-3.5 absolute top-0.5 right-0.5  bg-white rounded-full flex text-center items-center justify-center ">
               <span className=" text-[10px] font-extrabold text-[#319DFF] ">
                 1

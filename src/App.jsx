@@ -1,28 +1,24 @@
-import Benifits from "./components/benifitsSection/Benifits";
-import FeaturedProductsSection from "./components/featuredProducts/FeaturedProductSection";
-import FeaturedProductSectionSmallScreen from "./components/featuredProducts/FeaturedProductSectionSmallScreen";
-import FirstFooter from "./components/footer/FirstFooter";
-import SecondFooter from "./components/footer/SecondFooter";
-import FirstHeader from "./components/Headers/FirstHeader";
-import SecondHeader from "./components/Headers/SecondHeader";
-import HeroSection from "./components/heroSection/HeroSection";
-import Sidebar from "./components/sidebar/Sidebar";
-import SubscribeAndEmailSection from "./components/subscribeAndEmailSection/SubscribeAndEmailSection";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Home";
+import Cart from "./components/cart/Cart";
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/cart",
+      element: <Cart />,
+    },
+  ]);
   return (
     <>
-      <FirstHeader />
-      <SecondHeader/>
-      <HeroSection />
-      <Benifits />
-      <FeaturedProductsSection />
-      <FeaturedProductSectionSmallScreen />
-      <SubscribeAndEmailSection />
-      <FirstFooter />
-      <SecondFooter />
+    
+      <RouterProvider router={router} />
     </>
-  ); 
+  );
 }
 
 export default App;
