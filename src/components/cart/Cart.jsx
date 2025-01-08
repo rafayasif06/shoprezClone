@@ -103,7 +103,7 @@ const Cart = () => {
         ) : (
           <p className="text-gray-500">Your cart is empty.</p>
         )}
-        <div className="flex">
+        {/* <div className="flex">
           <Link to={"/"}>
             <p className="flex items-center justify-center p-4  gap-2 text-xl bg-[#319DFF] hover:bg-[#0F121E] text-white rounded-lg">
               <span>To Home</span>
@@ -112,7 +112,7 @@ const Cart = () => {
               </span>
             </p>
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

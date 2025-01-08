@@ -10,6 +10,10 @@ const FeaturedProductSectionSmallScreen = () => {
   const [isOpen, setIsOpen] = useState(true);
   const toggleToOpen = () => setIsOpen((prev) => !prev);
 
+  const savingItem = (key, item) => {
+    localStorage.setItem(key, JSON.stringify(item));
+  };
+
   return (
     <section className="w-full md:hidden ">
       <div className="flex flex-col justify-center p-8 relative gap-12 ">
@@ -43,11 +47,16 @@ const FeaturedProductSectionSmallScreen = () => {
                 <span>{item.productPrice}</span>
               </div>
               <div className="flex justify-between items-center">
-                <div className="flex  items- rounded-full items-center justify-center py-3 px-4 text-white gap-3 bg-[#319DFF] leading-none ">
-                  <span className=" text-xl">
-                    <HiShoppingBag />
-                  </span>
-                  <span className="text-base">Add to Cart</span>
+                <div className="flex   ">
+                  <button
+                    className="flex  rounded-full items-center justify-center py-3 px-4 text-white gap-3 bg-[#319DFF] leading-none"
+                    onClick={() => savingItem(index, item)}
+                  >
+                    <span className=" text-xl">
+                      <HiShoppingBag />
+                    </span>
+                    <span className="text-base">Add to Cart</span>
+                  </button>
                 </div>
                 <div className="flex items-center justify-center p-3 w-10 h-10 rounded-full bg-gray-200">
                   <span className="text-gray-600">

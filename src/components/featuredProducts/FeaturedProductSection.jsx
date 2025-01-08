@@ -1,13 +1,30 @@
-import React, { useRef } from "react";
-import { FeaturedItems } from "./FeaturedProductItems";
+import React, { useState, useEffect, useRef } from "react";
 import "slick-carousel/slick/slick.css";
 import { HiShoppingBag } from "react-icons/hi2";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import nextArrow from "../../assets/carousel/nextArrow.svg";
 import prevArrow from "../../assets/carousel/prevArrow.svg";
+import { use } from "react";
 
-const FeaturedProductsSection = () => {
+const FeaturedProductsSection = ({ title = "Featured Products" }) => {
+  const [api, setApi] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:1337/api/featured-sections?populate=*"
+      );
+      const { data } = await response.json();
+      setApi(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const sliderRef = useRef(null);
   const CustomPrevArrow = (props) => (
     <button
@@ -35,7 +52,7 @@ const FeaturedProductsSection = () => {
 
   const savingItem = (key, item) => {
     localStorage.setItem(key, JSON.stringify(item));
-};
+  };
 
   var settings = {
     dots: false,
@@ -74,38 +91,45 @@ const FeaturedProductsSection = () => {
       <div className=" p-8 flex flex-col gap-12 relative mx-auto max-w-[1440px] ">
         <div className=" font-medium">
           <span className="text-4xl underline decoration-blue-500 decoration-2 underline-offset-8">
-            Featured Products
+            {title}
           </span>
         </div>
-        <div className="w-full  ">
+        <div className="w-full   ">
           <Slider ref={sliderRef} {...settings} className="">
-            {FeaturedItems.map((item, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center justify-center h-[350px]  border rounded-md p-4"
-              >
-                <div className="flex flex-col gap-3">
-                  <span className="text-gray-500 text-sm font-normal">
-                    {item.productManufacturer}
-                  </span>
-                  <a href="#">
-                    <p className="text-[#0077E4] font-medium text-base- ">
-                      {item.product}
-                    </p>
-                  </a>
-                </div>
-
-                <div className="flex justify-center w-72 flex-1">
-                  <img src={item.prductImg} alt="" />
-                </div>
-                <div className="flex justify-between items-center">
-                  <div className="text-lg font-semibold">
-                    <span>{item.productPrice}</span>
+            {api.map((item) => (
+              <div key={item.id} className="px-2">
+                <div className="flex flex-col items-center justify-center h-[350px]  border rounded-md p-4 overflow-hidden">
+                  <div className="flex flex-col gap-3 ">
+                    <span className="text-gray-500 text-sm font-normal">
+                      {item.productBrand}
+                    </span>
+                    <a href="#">
+                      <p className="text-[#0077E4] font-medium text-base- ">
+                        {item.product}
+                      </p>
+                    </a>
                   </div>
-                  <div onClick={()=>savingItem(index,item)} className="flex rounded-full justify-center items-center h-8 w-8 bg-gray-300 hover:bg-gray-400 text-white">
-                    <button>
-                      <HiShoppingBag />
-                    </button>
+
+                  <div className="flex justify-center w-72 flex-1 ">
+                    <img
+                      src={`${import.meta.env.VITE_API_URL}${
+                        item.productImage.formats.thumbnail.url
+                      }`}
+                      className=" hover:scale-110 transition duration-500"
+                    />
+                  </div>
+                  <div className="w-full flex justify-between px-3 items-center">
+                    <div className="text-lg font-semibold">
+                      <span>{item.productPrice}</span>
+                    </div>
+                    <div
+                      onClick={() => savingItem(index, item)}
+                      className="flex   rounded-full justify-center items-center h-8 w-8 bg-gray-300 hover:bg-gray-400 text-white"
+                    >
+                      <button>
+                        <HiShoppingBag />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

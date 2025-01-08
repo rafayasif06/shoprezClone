@@ -23,13 +23,13 @@ const SecondHeader = () => {
 
         {/* --------Website-Logo------------ */}
         <div>
-          <a href="#">
+          <Link to={"/"}>
             <img
               className="min-w-28 w-28"
               src="https://shoperz-one.vercel.app/_next/static/media/shoperz.4818bbc8.svg"
               alt="logo"
             />
-          </a>
+          </Link>
         </div>
 
         {/* -----------Category-Button--------- */}
@@ -72,7 +72,7 @@ const SecondHeader = () => {
         <div className="min-w-32 flex overflow-hidden items-center">
           <button className="relative text-white rounded-l-lg text-xl  p-3 bg-[#319DFF]">
             <Link to={"/cart"}>
-            <HiShoppingBag />
+              <HiShoppingBag />
             </Link>
             <div className="w-3.5 h-3.5 absolute top-0.5 right-0.5  bg-white rounded-full flex text-center items-center justify-center ">
               <span className=" text-[10px] font-extrabold text-[#319DFF] ">

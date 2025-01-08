@@ -39,7 +39,7 @@ const FirstHeader = () => {
 
   return (
     <>
-      <nav className="text-[#7D8FA9]  w-full justify-between p-4 px-12 hidden lg:flex ">
+      <nav className="text-[#7D8FA9]  w-full justify-between p-2 px-12 hidden lg:flex ">
         <section className="flex gap-12 items-center justify-center">
           <div className="flex gap-12">
             {headerLeft.map((item, index) => (

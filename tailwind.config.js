@@ -12,6 +12,10 @@ export default {
     screens,
     fontSize,
     extend: {
+      colors:{
+        customBlue:'#319DFF',
+        customGray:'#0F121E'
+      },
       fontFamily:{
         roboto:['Roboto']
       },

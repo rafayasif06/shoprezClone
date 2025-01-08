@@ -72,8 +72,8 @@ export const HiddenPriceOptions =[
   },
 ]
 
-const SidebarItems = () => {
+const SimilarItems = () => {
   return <div></div>;
 };
 
-export default SidebarItems;
+export default SimilarItems;
